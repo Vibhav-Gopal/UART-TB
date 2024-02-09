@@ -1,0 +1,73 @@
+xrun: 20.09-s003: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun	20.09-s003: Started on Feb 07, 2024 at 05:32:13 EST
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	tb.v
+	uart_tx.v
+	uart_rx.v
+	-access +rw
+	design.sv
+	testbench.sv
+    $random(seedTx);
+          |
+xmvlog: *W,NOSYST (tb.v,136|10): System function '$random' invoked as a task. Return value will be ignored.
+      sendTx();#500;
+             |
+xmvlog: *W,TMTPAR (tb.v,143|13): A task enable with no arguments must not include an empty set of parentheses [10.2.2 (IEEE Std 1364-2005)].  The compiler has ignored the parentheses.  Use 'xmhelp xmvlog TMTPAR'  for further information.
+	Top level design units:
+		tb
+    reset,
+        |
+xmelab: *W,CSINFI (./tb.v,32|8): implicit wire has no fanin (tb.reset).
+Loading snapshot worklib.tb:v .................... Done
+xcelium> source /xcelium20.09/tools/xcelium/files/xmsimrc
+xcelium> run
+Transmission check passed for 47
+Reception check passed for 47
+Transmission check passed for 3e
+Reception check passed for 3e
+Transmission check passed for 0e
+Reception check passed for 0e
+Transmission check passed for 1e
+Reception check passed for 1e
+Transmission check passed for 01
+Reception check passed for 01
+Transmission check passed for 63
+Reception check passed for 63
+Transmission check passed for 0b
+Reception check passed for 0b
+Transmission check passed for 03
+Reception check passed for 03
+Transmission check passed for a8
+Reception check passed for a8
+Transmission check passed for e3
+Reception check passed for e3
+Transmission check passed for 46
+Reception check passed for 46
+Transmission check passed for 6d
+Reception check passed for 6d
+Transmission check passed for 3e
+Reception check passed for 3e
+Transmission check passed for bc
+Reception check passed for bc
+Transmission check passed for 5e
+Reception check passed for 5e
+Transmission check passed for 30
+Reception check passed for 30
+Transmission check passed for 1e
+Reception check passed for 1e
+Transmission check passed for 4a
+Reception check passed for 4a
+Transmission check passed for 4e
+Reception check passed for 4e
+Transmission check passed for a0
+Reception check passed for a0
+CHECKER STATS
+FRAMES SENT =          20, CORRECT FRAMES =          20
+
+Simulation complete via $finish(1) at time 38152 NS + 0
+./tb.v:147     $finish;
+xcelium> exit
+TOOL:	xrun	20.09-s003: Exiting on Feb 07, 2024 at 05:32:14 EST  (total: 00:00:01)
